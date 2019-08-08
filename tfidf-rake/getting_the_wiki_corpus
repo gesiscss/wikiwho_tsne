@@ -1,3 +1,0 @@
-To retrieve the data:
-1. Download and unzip the wiki dump from here: https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2
-2. run: python -m gensim.scripts.make_wikicorpus ~/enwiki-latest-pages-articles.xml.bz2 <destination_dir>
