@@ -51,8 +51,8 @@ def combine(chobj, jlogie_df):
                 if len(token[col].unique()) == 1:
                     chobj[col] = list(token[col])[0]
                 else:
-                    chobj[col] = None
-                    print("non congruent values found for df['to_rev'] == ", str(chobj["to_rev"]), " and token ids: ", list(token["token_id"]), " in jlogie. Setting None to column ", str(col))
+                    chobj[col] = 'Y'
+                    print("non congruent values found for df['to_rev'] == ", str(chobj["to_rev"]), " and token ids: ", list(token["token_id"]), " in jlogie. Setting Yes to column ", str(col))
             return chobj
         return pd.Series(None)
     else:
