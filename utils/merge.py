@@ -28,7 +28,7 @@ def combine(chobj, jlogie_df):
             chobj["action"] = None
             return chobj
     elif not token.empty and len(token) > 1:
-        which_jlogie = token["token_id"].isin(chobj["ins_tokens"])
+        which_jlogie = token["token_id"].isin(chobj["ins_tokens"]) | token["token_id"].isin(chobj["del_tokens"])
         if np.sum(which_jlogie) == 1:
             to_merge = jlogie_df.iloc[which_jlogie.index[0]]
             chobj["nationality"] = to_merge["nationality"]
