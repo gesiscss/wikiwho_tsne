@@ -1,0 +1,17 @@
+
+andas
+qgrid
+#bokeh
+#gensim
+ipython
+ipywidgets
+nbstripout
+networkx
+nltk
+jupyter
+pandas
+plotly==3.7.1
+sklearn
+wikiwho-chobj==1.0
+wikiwho-pickle==1.1.1
+wikiwho-wrapper==1.6.4
