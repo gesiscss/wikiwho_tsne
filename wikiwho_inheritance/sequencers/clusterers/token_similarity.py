@@ -30,6 +30,9 @@ class Token_Similarity(clusterer.Clusterer):
                 if np.isnan(self.df.loc[i,'clusters']):
                     self.df.loc[i:len(self.df), 'clusters'] = self.df.apply(lambda token_id: common_tokens(self.df.loc[i,'right_token_str_clean'],token_id['right_token_str_clean'], self.df.loc[i,'left_token_str_clean'], token_id['left_token_str_clean'], self.params['intersection']), axis=1)
                     cluster += 1
+        for i, row in pd.DataFrame(self.df['clusters'].value_counts()).iterrows():
+            if row.clusters<self.params['min_samples']:
+                self.df.loc[self.df['clusters']==i, 'clusters'] = -1
 
 
 

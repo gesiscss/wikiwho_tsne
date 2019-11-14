@@ -21,6 +21,9 @@ class Kmeans(clusterer.Clusterer):
         clusterer = KMeans(random_state=self.params['random_state'])
         clusters = clusterer.fit_predict(np.array(self.transform_feat()))
         self.add_clusters(clusters)
+        for i, row in pd.DataFrame(self.df['clusters'].value_counts()).iterrows():
+            if row.clusters<self.params['min_samples']:
+                self.df[self.df['clusters']==i, 'clusters'] = -1
         return clusters
     def silhouette(self):
         X = self.transform_feat()
@@ -30,6 +33,14 @@ class Kmeans(clusterer.Clusterer):
         self.df['silhouette_value'] = silhouette_samples(X, cluster_labels)
         return silhouette_avg
     
+    def evaluate_k(self):
+        Sum_of_squared_distances = []
+        K = range(4,10)
+        for k in K:
+            km = KMeans(n_clusters=k)
+            km = km.fit(np.array(self.transform_feat()))
+            Sum_of_squared_distances.append(km.inertia_)
+        return(Sum_of_squared_distances)
 
 
 
