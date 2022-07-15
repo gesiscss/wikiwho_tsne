@@ -17,7 +17,7 @@ datashape==0.5.2
 decorator==4.4.0
 defusedxml==0.6.0
 deprecation==2.0.6
-distributed==2.2.0
+distributed==2021.10.0
 docopt==0.6.2
 docutils==0.14
 entrypoints==0.3
