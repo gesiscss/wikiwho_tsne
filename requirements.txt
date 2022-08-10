@@ -49,7 +49,7 @@ multipledispatch==0.6.0
 mwcli==0.0.2
 mwtypes==0.3.2
 mwxml==0.3.3
-nbconvert==5.5.0
+nbconvert==6.3.0
 nbformat==4.4.0
 nbstripout==0.3.6
 networkx==2.3
